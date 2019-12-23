@@ -19,10 +19,19 @@ class School
     roster[grade]  
   end   
   
-  def sort
-    roster.each {|grade, name| name.sort!}
-    sorted = roster.sort_by {|grade, name| grade}
-    sorted.to_h
-  end 
+#   def sort
+#   #   roster.each {|grade, name| name.sort!}
+#   #   sorted = roster.sort_by {|grade, name| grade}
+#   #   sorted.to_h
+#   # end 
+# end 
+
+def sort
+    sorted = {}
+    roster.each do |grade, students|
+      sorted[grade] = students.sort
+    end
+    p sorted
+  end
 end 
 
